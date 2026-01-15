@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VOO28 – Agenciamento Artístico</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #064e3b;
+    }
+
+    header {
+      background-color: #065f46;
+      padding: 10px;
+      color: #ffffff;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .logo {
+      width: 100px;
+      height: auto;
+      height: 60px;
+    }
+
+    .titulo-header {
+      text-align: center;
+      flex: 1;
+    }
+
+    nav {
+      background-color: #047857;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .menu-principal {
+      display: inline-block;
+      position: relative;
+    }
+
+    .menu-principal button {
+      background-color: #047857;
+      color: #ffffff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .menu-principal button:hover {
+      background-color: #065f46;
+    }
+
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #10b981;
+      border-radius: 6px;
+      min-width: 200px;
+      flex-direction: column;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    .submenu a {
+      display: block;
+      padding: 12px 20px;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .submenu a:hover {
+      background-color: #065f46;
+    }
+
+    .menu-principal:hover .submenu {
+      display: flex;
+    }
+
+    section {
+      display: none;
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+      border-radius: 8px;
+      color: #064e3b;
+    }
+
+    section:target {
+      display: block;
+    }
+
+    #home {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      padding: 80px 20px;
+    }
+
+    #home .texto-home {
+      flex: 1;
+    }
+
+    #home .texto-home h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    #home .texto-home p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    #home img {
+      flex: 1;
+      max-width: 30%;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      
+    }
+
+    h2 {
+      color: #047857;
+    }
+
+    .tempos a {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 20px;
+      background-color: #10b981;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .tempos a:hover {
+      background-color: #065f46;
+    }
+
+    .botao-voltar {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: #10b981;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .botao-voltar:hover {
+      background-color: #065f46;
+    }
+
+    footer {
+      background-color: #065f46;
+      text-align: center;
+      padding: 20px;
+      color: #ffffff;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      #home {
+        flex-direction: column;
+        text-align: center;
+      }
+      #home img {
+        margin-top: 20px;
+      }
+      #home .texto-home h2 {
+        font-size: 28px;
+      }
+      #home .texto-home p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <img src="imagem/voo28.jpg" alt="Logo VOO28" class="logo">
+      <div class="titulo-header">
+        <h1>VOO28</h1>
+        <p>Agenciamento Artístico & Produção Musical</p>
+      </div>
+      <img src="imagem/voo28.jpg" alt="Logo VOO28" class="logo">
+    </div>
+  </header>
+
+  <nav>
+    <div class="menu-principal">
+      <button>MENU</button>
+      <div class="submenu">
+        <a href="home.html">Home</a>
+        <a href="trimestre1.html">1º Trimestre</a>
+        <a href="trimestre2.html">2º Trimestre</a>
+        <a href="trimestre3.html">3º Trimestre</a>
+        <a href="final.html">Final</a>
+      </div>
+    </div>
+  </nav>
+
+ 
+
+
+
+  </body>
+</html>

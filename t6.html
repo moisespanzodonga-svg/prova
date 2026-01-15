@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VOO28 – Agenciamento Artístico</title>
+  <style>
+    body {
+      
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color:#065f46;
+      color: #064e3b;
+    }
+
+    header {
+      background-color: #065f46;
+      padding: 10px;
+      color: #ffffff;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .logo {
+      width: 100px;
+      height: auto;
+      height: 60px;
+    }
+
+    .titulo-header {
+      text-align: center;
+      flex: 1;
+    }
+
+    nav {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      padding: 10px;
+      
+    }
+
+    .menu-principal {
+      display: inline-block;
+      position: relative;
+    }
+
+    .menu-principal button {
+      background-color: #047857;
+      color: #ffffff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #10b981;
+      border-radius: 6px;
+      min-width: 200px;
+      flex-direction: column;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    .submenu a {
+      display: block;
+      padding: 12px 20px;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .submenu a:hover {
+      background-color: #065f46;
+    }
+
+    .menu-principal:hover .submenu {
+      display: flex;
+    }
+
+    section {
+      display: none;
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+      border-radius: 8px;
+      
+    }
+
+    section:target {
+      display: block;
+    }
+
+    #home {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      padding: 80px 20px;
+    }
+
+    #home .texto-home {
+      flex: 1;
+    }
+
+    #home .texto-home h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    #home .texto-home p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    #home img {
+      flex: 1;
+      max-width: 30%;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      
+    }
+
+    h2 {
+      color: #047857;
+    }
+
+    .tempos a {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 20px;
+      background-color: #10b981;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .tempos a:hover {
+      background-color: #065f46;
+    }
+
+    .botao-voltar {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: #10b981;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .botao-voltar:hover {
+      background-color: #065f46;
+    }
+
+    footer {
+      background-color: #4CAF50;
+      text-align: center;
+      padding: 40px;
+      color: #ffffff;
+      margin-top: 10px;
+      
+    }
+
+    @media (max-width: 768px) {
+      #home {
+        flex-direction: column;
+        text-align: center;
+      }
+      #home img {
+        margin-top: 20px;
+      }
+      #home .texto-home h2 {
+        font-size: 28px;
+      }
+      #home .texto-home p {
+        font-size: 16px;
+      }
+    }
+
+
+    
+        /* Menu de botões */
+        
+
+        nav a {
+            display: inline-block;
+            margin: 5px;
+            padding: 15px ;
+            color: white;
+            text-decoration: none;
+            background-color: #4CAF50;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+       
+        /* Seções simulando páginas */
+        section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            color: white;
+        }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <img src="imagem/voo28.jpg" alt="Logo VOO28" class="logo">
+      <div class="titulo-header">
+        <h1>VOO28</h1>
+        <p>Agenciamento Artístico & Produção Musical</p>
+      </div>
+      <img src="imagem/voo28.jpg" alt="Logo VOO28" class="logo">
+    </div>
+  </header>
+
+  <nav>
+    <div class="menu-principal">
+      <button>MENU</button>
+      <div class="submenu">
+        <a href="home.html">Home</a>
+        <a href="trimestre1.html">1º Trimestre</a>
+        <a href="trimestre2.html">2º Trimestre</a>
+        <a href="trimestre3.html">3º Trimestre</a>
+        <a href="final.html">Final</a>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+  
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #4CAF50;
+            margin-top: 30px;
+        }
+
+        h3 {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Caixa ilustrativa */
+        .box {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4CAF50;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        code {
+            background-color: #eee;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+
+      <h1>Seja bem-Vindo ao Segundo trimestre</h1>
+        <h1>Introdução ao CSS</h1>
+    </header>
+
+    <main>
+        <h2>O que é CSS?</h2>
+        <p>O <span class="highlight">CSS (Cascading Style Sheets)</span> é uma linguagem utilizada para <strong>definir a aparência de páginas web</strong>. Ele trabalha em conjunto com o HTML, permitindo separar o conteúdo da apresentação visual.</p>
+
+        <div class="box">
+            <p><strong>Destaque:</strong> Sem CSS, uma página HTML seria apenas texto e imagens sem qualquer estilo ou layout organizado.</p>
+        </div>
+
+        <h2>Importância do CSS</h2>
+        <p>O CSS é essencial porque permite:</p>
+        <ul>
+            <li><span class="highlight">Separar conteúdo e design:</span> facilita a manutenção do site.</li>
+            <li><span class="highlight">Melhorar a estética:</span> cores, fontes, tamanhos, espaçamento e posicionamento.</li>
+            <li><span class="highlight">Adaptabilidade:</span> torna o site responsivo para diferentes dispositivos (computadores, tablets, smartphones).</li>
+        </ul>
+
+        <div class="box">
+            <p><strong>Exemplo:</strong> Com CSS podemos mudar a cor de um título usando <code>color: green;</code> ou o tamanho da fonte com <code>font-size: 24px;</code>.</p>
+        </div>
+
+        <h2>Tipos de folhas de estilo</h2>
+        <p>O CSS pode ser aplicado de três maneiras diferentes:</p>
+        <ul>
+            <li><strong>Inline:</strong> o estilo é adicionado diretamente no elemento HTML usando o atributo <code>style</code>. Exemplo: <code>&lt;h1 style="color: green;"&gt;Título&lt;/h1&gt;</code></li>
+            <li><strong>Interno:</strong> o estilo é definido dentro de uma tag <code>&lt;style&gt;</code> na própria página HTML.</li>
+            <li><strong>Externo:</strong> o estilo é escrito em um arquivo <code>.css</code> separado, que é vinculado à página usando <code>&lt;link rel="stylesheet" href="estilos.css"&gt;</code>. Este é o método mais recomendado para sites grandes.</li>
+        </ul>
+
+        <div class="box">
+            <p><strong>Dica:</strong> Usar CSS externo facilita reaproveitar estilos em várias páginas de um mesmo site.</p>
+        </div>
+
+        <h2>Conclusão</h2>
+        <p>O CSS é uma ferramenta poderosa que transforma páginas HTML simples em sites visualmente atraentes e organizados. Com ele, podemos controlar cores, fontes, layouts, animações e muito mais, garantindo uma experiência agradável para os usuários.</p>
+
+    </main>
+
+
+ <footer>
+    <p>© 2026 VOO28 – Todos os direitos reservados</p>
+  </footer>
+
+  </body>
+</html>
