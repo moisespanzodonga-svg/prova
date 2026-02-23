@@ -1,199 +1,284 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VOO28 – Fundamentos do CSS Moderno</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOO28 – Agenciamento Artístico</title>
 
-  <!-- ESTILOS GERAIS -->
-  <style>
-    :root {
-      --primary: #047857;
-      --secondary: #10b981;
-      --dark: #064e3b;
-      --light: #f9fafb;
-      --gray: #6b7280;
-    }
+<style>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-    }
+/* ===== VARIÁVEIS ===== */
+:root {
+  --primary: #047857;
+  --secondary: #10b981;
+  --dark: #064e3b;
+  --light: #f9fafb;
+  --gray: #6b7280;
+}
 
-    body {
-      background-color: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
-    }
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
 
-    /* HEADER */
-    header {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
-      padding: 1.5rem 1rem;
-    }
+body {
+  background-color: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
 
-    .header-container {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+/* ===== HEADER ===== */
+header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 1.5rem 1rem;
+}
 
-    .logo {
-      height: 60px;
-    }
+.header-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-    .titulo-header {
-      text-align: center;
-    }
+.logo {
+  height: 60px;
+}
 
-    /* MENU */
-    nav {
-      background-color: var(--primary);
-      padding: 10px;
-      text-align: center;
-    }
+.titulo-header {
+  text-align: center;
+}
 
-    .menu-principal {
-      position: relative;
-      display: inline-block;
-    }
+.titulo-header p {
+  color: white;
+}
 
-    .menu-principal button {
-      background-color: var(--secondary);
-      color: white;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+/* ===== MENU ===== */
+nav {
+  background-color: var(--primary);
+  padding: 15px;
+  text-align: center;
+}
 
-    .submenu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: var(--secondary);
-      border-radius: 8px;
-      min-width: 220px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
+.menu-principal {
+  position: relative;
+  display: inline-block;
+}
 
-    .submenu a {
-      display: block;
-      padding: 12px;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
+.menu-principal button {
+  background-color: var(--secondary);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-    .submenu a:hover {
-      background-color: var(--primary);
-    }
+.menu-principal button:hover {
+  background-color: var(--dark);
+}
 
-    .menu-principal:hover .submenu {
-      display: block;
-    }
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--secondary);
+  border-radius: 8px;
+  min-width: 220px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
 
-    /* SEÇÕES */
-    section {
-      max-width: 900px;
-      margin: 2rem auto;
-      background: white;
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    }
+.submenu a {
+  display: block;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-    h2 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
+.submenu a:hover {
+  background-color: var(--primary);
+}
 
-    h1{
+.menu-principal:hover .submenu {
+  display: block;
+}
 
+/* ===== GALERIA ===== */
+.galeria {
+  max-width: 1100px;
+  margin: 3rem auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
 
-        text-align: center;
-    }
+.caixa-foto {
+  flex: 1;
+  background: white;
+  padding: 15px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: 0.3s;
+}
 
-    p {
-      margin-bottom: 1rem;
-    color:#111827;
-      text-align: center;
-    }
+.caixa-foto:hover {
+  transform: translateY(-8px);
+}
 
-    pre {
-      background: #111827;
-      color: #e5e7eb;
-      padding: 1rem;
-      border-radius: 12px;
-      overflow-x: auto;
-      margin: 1rem 0;
-    }
+.caixa-foto img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+}
 
-    code {
-      background: #f3f4f6;
-      padding: 4px 6px;
-      border-radius: 6px;
-    }
+.caixa-foto h3 {
+  margin-top: 10px;
+  color: var(--primary);
+}
 
-    .box {
-      border-left: 20px solid var(--primary);
-      padding: 1rem;
-      background: #ecfdf5;
-      border-radius: 10px;
-      margin: 1rem 0;
-    }
+/* ===== CAIXAS DE TEXTO ===== */
+.caixas-texto {
+  max-width: 1100px;
+  margin: 3rem auto;
+  display: flex;
+  gap: 20px;
+}
 
+.texto-grande {
+  flex: 1;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
 
-    /* RESPONSIVO */
-    @media (max-width: 768px) {
-      .header-container {
-        flex-direction: column;
-        gap: 10px;
-      }
-    }
+.texto-grande:hover {
+  transform: translateY(-8px);
+}
 
+.texto-grande h2 {
+  color: var(--primary);
+  margin-bottom: 15px;
+}
 
-     footer {
-      background-color:#10b981;
-      text-align: center;
-      padding: 30px;
-      color: #ffffff;
-      margin-top: 40px;
-    }
-  </style>
+.texto-grande p {
+  text-align: left;
+  color: #111827;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: var(--secondary);
+  text-align: center;
+  padding: 30px;
+  color: white;
+  margin-top: 40px;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .galeria,
+  .caixas-texto {
+    flex-direction: column;
+  }
+}
+
+</style>
 </head>
 
 <body>
 
-  <!-- CABEÇALHO -->
-  <header>
-    <div class="header-container">
-      <img src="imagem/voo28.jpg" class="logo" alt="VOO28">
-      <div class="titulo-header">
-        <h1>VOO28</h1>
-        <p>Agenciamento Artístico & Produção Musical</p>
-      </div>
-      <img src="imagem/voo28.jpg" class="logo" alt="VOO28">
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="header-container">
+    <img src="imagem/voo28.jpg" class="logo" alt="VOO28">
+    
+    <div class="titulo-header">
+      <h1>VOO28</h1>
+      <p>Agenciamento Artístico & Produção Musical</p>
     </div>
-  </header>
 
-  <!-- MENU -->
-  <nav>
-    <div class="menu-principal">
-      <button>MENU</button>
-      <div class="submenu">
-        <a href="home.html">Home</a>
-        <a href="trimestre1.html">1º Trimestre</a>
-        <a href="trimestre2.html">2º Trimestre</a>
-        <a href="trimestre3.html">3º Trimestre</a>
-        <a href="final.html">Final</a>
-      </div>
+    <img src="imagem/voo28.jpg" class="logo" alt="VOO28">
+  </div>
+</header>
+
+<!-- ===== MENU ===== -->
+<nav>
+  <div class="menu-principal">
+    <button>MENU</button>
+    <div class="submenu">
+      <a href="#">Home</a>
+      <a href="#">1º Trimestre</a>
+      <a href="#">2º Trimestre</a>
+      <a href="#">3º Trimestre</a>
+      <a href="#">Final</a>
     </div>
-  </nav>
+  </div>
+</nav>
+
+<!-- ===== GALERIA ===== -->
+<section class="galeria">
+
+  <div class="caixa-foto">
+    <img src="imagem/IMG_8264.JPG" alt="Foto 1">
+    <h3>Artista 1</h3>
+  </div>
+
+  <div class="caixa-foto">
+    <img src="imagem/IMG_8268.JPG" alt="Foto 2">
+    <h3>Artista 2</h3>
+  </div>
+
+  <div class="caixa-foto">
+    <img src="imagem/IMG_8278.JPG" alt="Foto 3">
+    <h3>Artista 3</h3>
+  </div>
+
+</section>
+
+<!-- ===== CAIXAS DE TEXTO ===== -->
+<section class="caixas-texto">
+
+  <div class="texto-grande">
+    <h2>Produção Musical</h2>
+    <p>
+      A VOO28 trabalha com produção musical profissional,
+      desenvolvimento de artistas e gestão de carreira.
+      Oferecemos suporte estratégico para crescimento artístico.
+    </p>
+  </div>
+
+  <div class="texto-grande">
+    <h2>Agenciamento Artístico</h2>
+    <p>
+      Gerimos eventos, contratos, marketing digital
+      e posicionamento estratégico no mercado musical.
+      O nosso objetivo é elevar talentos ao próximo nível.
+    </p>
+  </div>
+
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  © 2026 VOO28 - Todos os direitos reservados
+</footer>
+
+</body>
+</html>
