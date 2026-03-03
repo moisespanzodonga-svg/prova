@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOO28 – Agenciamento Artístico</title>
+
+<style>
+
+/* =========================
+   VARIÁVEIS GLOBAIS
+========================= */
+:root {
+  --primary: #047857;
+  --secondary: #10b981;
+  --dark: #064e3b;
+  --light: #f9fafb;
+  --accent: #22c55e;
+  --text-dark: #111827;
+  --shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+  background-color: var(--light);
+  color: var(--text-dark);
+  line-height: 1.7;
+}
+
+/* =========================
+   HEADER COMPLETO
+========================= */
+header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 2rem 1rem;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 80px;
+}
+
+.header-text {
+  text-align: center;
+}
+
+.header-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.header-text p {
+  font-size: 1.1rem;
+}
+
+/* =========================
+   MENU
+========================= */
+nav {
+  background-color: var(--primary);
+  padding: 20px;
+  text-align: center;
+}
+
+.menu-principal {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-principal button {
+  background-color: var(--secondary);
+  color: white;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+.menu-principal button:hover {
+  background-color: var(--dark);
+  transform: scale(1.05);
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--secondary);
+  border-radius: 10px;
+  min-width: 250px;
+  box-shadow: var(--shadow);
+}
+
+.submenu a {
+  display: block;
+  padding: 14px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.submenu a:hover {
+  background-color: var(--primary);
+}
+
+.menu-principal:hover .submenu {
+  display: block;
+}
+
+/* =========================
+   CONTAINER PRINCIPAL
+========================= */
+.container {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+/* =========================
+   CARDS DETALHADOS
+========================= */
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow);
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card h2 {
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+/* =========================
+   GALERIA COMPLETA
+========================= */
+.galeria {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.caixa-foto {
+  flex: 1 1 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.caixa-foto img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.caixa-foto img:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   LISTAS
+========================= */
+ul {
+  margin-left: 25px;
+  margin-top: 15px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* =========================
+   TABELAS COMPLETAS
+========================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+th {
+  background: var(--primary);
+  color: white;
+}
+
+tr:nth-child(even) {
+  background: #f3f4f6;
+}
+
+/* =========================
+   FOOTER COMPLETO
+========================= */
+footer {
+  background-color: var(--secondary);
+  text-align: center;
+  padding: 40px;
+  color: white;
+  font-size: 1rem;
+  margin-top: 50px;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .galeria {
+    flex-direction: column;
+  }
+}
+
+/* ===== CAIXAS DE TEXTO ===== */
+.caixas-texto {
+  max-width: 1100px;
+  margin: 3rem auto;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.texto-grande {
+  flex: 1 1 450px;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.texto-grande:hover {
+  transform: translateY(-8px);
+}
+
+.texto-grande h2 {
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-container">
+    <img src="imagem/voo28.jpg" class="logo">
+    
+    <div class="header-text">
+      <h1>VOO28</h1>
+      <p>Agenciamento Artístico, Gestão de Carreira e Produção Musical</p>
+      <p>Empresa focada no crescimento estratégico de artistas emergentes em Angola</p>
+    </div>
+
+    <img src="imagem/voo28.jpg" class="logo">
+  </div>
+</header>
+
+ <nav>
+    <div class="menu-principal">
+      <button>MENU</button>
+      <div class="submenu">
+        <a href="home.html">Home</a>
+        <a href="trimestre1.html">1º Trimestre</a>
+        <a href="trimestre2.html">2º Trimestre</a>
+        <a href="trimestre3.html">3º Trimestre</a>
+        <a href="final.html">Final</a>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+</section>
+
+<div id="trimestre1" class="card">
+      <header>
+
+      <h1>Seja bem-Vindo ao Segundo trimestre</h1>
+        <h1>Introdução ao CSS</h1>
+    </header>
+
+    <main>
+        <h2>O que é CSS?</h2>
+        <p>O <span class="highlight">CSS (Cascading Style Sheets)</span> é uma linguagem utilizada para <strong>definir a aparência de páginas web</strong>. Ele trabalha em conjunto com o HTML, permitindo separar o conteúdo da apresentação visual.</p>
+
+        <div class="box">
+            <p><strong>Destaque:</strong> Sem CSS, uma página HTML seria apenas texto e imagens sem qualquer estilo ou layout organizado.</p>
+        </div>
+
+        <h2>Importância do CSS</h2>
+        <p>O CSS é essencial porque permite:</p>
+        <ul>
+            <li><span class="highlight">Separar conteúdo e design:</span> facilita a manutenção do site.</li>
+            <li><span class="highlight">Melhorar a estética:</span> cores, fontes, tamanhos, espaçamento e posicionamento.</li>
+            <li><span class="highlight">Adaptabilidade:</span> torna o site responsivo para diferentes dispositivos (computadores, tablets, smartphones).</li>
+        </ul>
+
+        <div class="box">
+            <p><strong>Exemplo:</strong> Com CSS podemos mudar a cor de um título usando <code>color: green;</code> ou o tamanho da fonte com <code>font-size: 24px;</code>.</p>
+        </div>
+
+        <h2>Tipos de folhas de estilo</h2>
+        <p>O CSS pode ser aplicado de três maneiras diferentes:</p>
+        <ul>
+            <li><strong>Inline:</strong> o estilo é adicionado diretamente no elemento HTML usando o atributo <code>style</code>. Exemplo: <code>&lt;h1 style="color: green;"&gt;Título&lt;/h1&gt;</code></li>
+            <li><strong>Interno:</strong> o estilo é definido dentro de uma tag <code>&lt;style&gt;</code> na própria página HTML.</li>
+            <li><strong>Externo:</strong> o estilo é escrito em um arquivo <code>.css</code> separado, que é vinculado à página usando <code>&lt;link rel="stylesheet" href="estilos.css"&gt;</code>. Este é o método mais recomendado para sites grandes.</li>
+        </ul>
+
+        <div class="box">
+            <p><strong>Dica:</strong> Usar CSS externo facilita reaproveitar estilos em várias páginas de um mesmo site.</p>
+        </div>
+
+        <h2>Conclusão</h2>
+        <p>O CSS é uma ferramenta poderosa que transforma páginas HTML simples em sites visualmente atraentes e organizados. Com ele, podemos controlar cores, fontes, layouts, animações e muito mais, garantindo uma experiência agradável para os usuários.</p>
+
+    </main>
+
+
+</div>
+                   
+<div id="trimestre2" class="card">
+    
+ <header>
+<h1>Fundamentos do CSS Moderno</h1>
+<p>Sintaxe Básica • Selectores • Elementos, Classes e ID</p>
+
+</header>
+
+
+<section>
+<h2>1. Sintaxe Básica do CSS</h2>
+<p>O CSS (Cascading Style Sheets) é usado para definir o estilo visual de páginas HTML. A sua sintaxe é simples e organizada.</p>
+
+
+<div class="box">
+<strong>Estrutura básica:</strong>
+<pre>selector {
+propriedade: valor;
+}</pre>
+</div>
+
+
+<p><strong>Exemplo prático:</strong></p>
+<pre>p {
+color: green;
+font-size: 16px;
+}</pre>
+
+
+<p>Neste exemplo, o seletor <code>p</code> aplica estilo a todos os parágrafos.</p>
+</section>
+
+
+<section>
+<h2>2. Selectores Simples</h2>
+<p>Os selectores indicam quais elementos HTML receberão os estilos definidos no CSS.</p>
+
+
+<div class="box">
+<ul>
+<li><strong>Selector de elemento:</strong> <code>p</code>, <code>h1</code>, <code>div</code></li>
+<li><strong>Selector de classe:</strong> <code>.nomeDaClasse</code></li>
+<li><strong>Selector de ID:</strong> <code>#nomeDoId</code></li>
+</ul>
+</div>
+
+
+<p><strong>Exemplo:</strong></p>
+<pre>h1 {
+color: darkgreen;
+}</pre>
+</section>
+
+
+<section>
+<h2>3. Elementos, Classes e ID</h2>
+<p>No CSS moderno, usamos elementos, classes e IDs para aplicar estilos de forma organizada e reutilizável.</p>
+
+
+<h3>Elementos</h3>
+<p>Aplicam estilos a todas as tags do mesmo tipo.</p>
+<pre>p {
+color: #374151;
+}</pre>
+
+
+<h3>Classes</h3>
+<p>Permitem reutilizar estilos em vários elementos.</p>
+<pre>.destaque {
+background-color: #dcfce7;
+padding: 10px;
+}</pre>
+
+
+<h3>ID</h3>
+<p>Usado para estilizar um único elemento específico.</p>
+<pre>#principal {
+border: 2px solid green;
+}</pre>
+
+
+<div class="box">
+<strong>Dica moderna:</strong> Prefira classes em vez de IDs para facilitar manutenção e reutilização do código.
+</div>
+</section>
+
+    </div>
+
+ <div id="home" class="card " style="background-color:brown; ">
+  <h2 style="text-align: center;">CONCERTO TRAPLÂNDIA – EVENTO OFICIAL VOO28</h2>
+  <p>Evento organizado pela VOO28 com foco na promoção do artista Tennaz e outros talentos emergentes do cenário urbano angolano.</p>
+  <p>O objetivo do evento foi fortalecer a marca artística, aumentar o público e criar oportunidades estratégicas para futuras parcerias.</p>
+</div>
+
+</header>
+<br>
+<!-- ===== GALERIA ===== -->
+<section class="galeria">
+
+  <div class="caixa-foto">
+    <img src="imagem/IMG_8264.JPG" alt="Foto 1">
+  </div>
+
+  <div class="caixa-foto">
+    <img src="imagem/IMG_8268.JPG" alt="Foto 2">
+  </div>
+
+  <div class="caixa-foto">
+    <img src="imagem/IMG_8278.JPG" alt="Foto 3">
+  </div>
+
+</section>
+
+<!-- ===== CAIXAS DE TEXTO ===== -->
+<section class="caixas-texto">
+
+  <div class="texto-grande">
+    <h2>Produção Musical</h2>
+    <p>
+      A VOO28 trabalha com produção musical profissional,
+      desenvolvimento de artistas e gestão de carreira.
+      Oferecemos suporte estratégico para crescimento artístico.
+    </p>
+  </div>
+
+  <div class="texto-grande">
+    <h2>Agenciamento Artístico</h2>
+    <p>
+      Gerimos eventos, contratos, marketing digital
+      e posicionamento estratégico no mercado musical.
+      O nosso objetivo é elevar talentos ao próximo nível.
+    </p>
+  </div>
+
+</section>
+
+
+<br>
+<div id="trimestre2" class="card">
+  <div class="container">
+
+  <!-- INTRODUÇÃO -->
+  <div class="card">
+    <h2 style="text-align: center;">O que são Pseudo-classes?</h2>
+    <p>Pseudo-classes são palavras-chave adicionadas a seletores CSS que especificam um estado especial do elemento selecionado. Elas permitem estilizar elementos com base em sua posição, estado de interação, ou relacionamento com outros elementos, sem precisar adicionar classes extras no HTML.</p>
+    <ul>
+      <li><code>:hover</code> – Ativado quando o usuário passa o mouse sobre o elemento</li>
+      <li><code>:nth-child()</code> – Seleciona elementos com base em sua posição entre irmãos</li>
+      <li><code>:first-child</code> – Seleciona o primeiro elemento filho de seu pai</li>
+      <li><code>:last-child</code> – Seleciona o último elemento filho de seu pai</li>
+      <li><code>:not()</code> – Seleciona elementos que NÃO correspondem ao seletor</li>
+      <li><code>:checked</code> – Aplica a elementos de formulário marcados/checados</li>
+    </ul>
+  </div>
+
+  <!-- MENU MODERNO -->
+  <div class="card">
+    <h2>Menu de Navegação Moderno</h2>
+    <ul class="modern-menu">
+      <li>Dashboard</li>
+      <li>Perfil do Usuário</li>
+      <li>Configurações</li>
+      <li>Relatórios</li>
+      <li>Sair</li>
+    </ul>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="card">
+    <h2>Timeline Vertical</h2>
+    <ul class="timeline">
+      <li><strong>2020 - Início da jornada:</strong> Primeiros passos no desenvolvimento web</li>
+      <li><strong>2021 - Especialização:</strong> Foco em CSS avançado e animações</li>
+      <li><strong>2022 - Projetos Grandes:</strong> Liderança em equipes de frontend</li>
+      <li><strong>2023 - Inovação:</strong> Implementação de design systems</li>
+    </ul>
+  </div>
+
+  <!-- TABELA DASHBOARD -->
+  <div class="card">
+    <h2>Tabela de Dashboard</h2>
+    <table class="dashboard-table">
+      <thead>
+        <tr>
+          <th>Usuário</th>
+          <th>Cargo</th>
+          <th>Status</th>
+          <th>Último Acesso</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Ana Silva</td><td>Designer</td><td>Ativo</td><td>2 min atrás</td></tr>
+        <tr><td>Bruno Costa</td><td>Developer</td><td>Ativo</td><td>1 hora atrás</td></tr>
+        <tr><td>Carla Dias</td><td>Manager</td><td>Pendente</td><td>3 dias atrás</td></tr>
+        <tr><td>Daniel Souza</td><td>Analista</td><td>Inativo</td><td>1 semana atrás</td></tr>
+        <tr><td>Elisa Lima</td><td>Marketing</td><td>Ativo</td><td>5 min atrás</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- TABELA COMPARATIVA -->
+  <div class="card">
+    <h2>Tabela Comparativa</h2>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Recurso</th>
+          <th>Básico</th>
+          <th>Pro</th>
+          <th>Enterprise</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Usuários</td><td>5</td><td>Ilimitado</td><td>Ilimitado</td></tr>
+        <tr><td>Armazenamento</td><td>10GB</td><td>100GB</td><td>1TB</td></tr>
+        <tr><td>Suporte</td><td>Email</td><td>24/7</td><td>Prioritário</td></tr>
+        <tr><td>API Access</td><td>✗</td><td>✓</td><td>✓</td></tr>
+        <tr><td>Preço</td><td>Grátis</td><td>R$29/mês</td><td>R$99/mês</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- CHECKLIST -->
+  <div class="card">
+    <h2>Checklist Interativo</h2>
+    <ul class="checklist" onclick="toggleCheck(event)">
+      <li>Entender a sintaxe de pseudo-classes</li>
+      <li>Praticar com :hover e :focus</li>
+      <li>Dominar :nth-child() e :nth-of-type()</li>
+      <li>Criar tabelas responsivas</li>
+      <li>Aplicar em projetos reais</li>
+    </ul>
+  </div>
+
+</div> 
+
+<br> 
+
+<div class="container">
+
+  <!-- LISTA NÃO ORDENADA -->
+  <div class="card">
+    <h2>Lista Não Ordenada (&lt;ul&gt;)</h2>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+    </ul>
+  </div>
+
+  <!-- LISTA ORDENADA -->
+  <div class="card">
+    <h2>Lista Ordenada (&lt;ol&gt;)</h2>
+    <ol>
+      <li>Primeiro item</li>
+      <li>Segundo item</li>
+      <li>Terceiro item</li>
+      <li>Quarto item</li>
+    </ol>
+  </div>
+
+  <!-- LISTA DE DEFINIÇÃO -->
+  <div class="card">
+    <h2>Lista de Definição (&lt;dl&gt;)</h2>
+    <dl>
+      <dt>&lt;ul&gt;</dt>
+      <dd>Define uma lista não ordenada.</dd>
+      <dt>&lt;ol&gt;</dt>
+      <dd>Define uma lista ordenada.</dd>
+      <dt>&lt;li&gt;</dt>
+      <dd>Define um item dentro de uma lista.</dd>
+      <dt>&lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt;</dt>
+      <dd>Define listas de definição, termos e descrições.</dd>
+    </dl>
+  </div>
+
+  <!-- TABELA BÁSICA -->
+  <div class="card">
+    <h2>Tabela Básica</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Função</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tennaz</td>
+          <td>Rapper</td>
+          <td>Ativo</td>
+        </tr>
+        <tr>
+          <td>Beto no Beat</td>
+          <td>Produtor</td>
+          <td>Ativo</td>
+        </tr>
+        <tr>
+          <td>Artista X</td>
+          <td>Cantor</td>
+          <td>Pendente</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- TABELA COM CÉLULAS MESCLADAS -->
+  <div class="card">
+    <h2>Tabela com Células Mescladas</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Categoria</th>
+          <th>Preço</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2" class="rowspan">Laptop</td>
+          <td>Hardware</td>
+          <td>$1200</td>
+        </tr>
+        <tr>
+          <td>Software</td>
+          <td>$300</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="colspan">Pacote Completo</td>
+          <td>$1500</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- RESUMO DAS TAGS -->
+  <div class="card">
+    <h2>Resumo das Tags</h2>
+    <div class="summary">
+      <p><strong>&lt;ul&gt;</strong> - Cria lista não ordenada.</p>
+      <p><strong>&lt;ol&gt;</strong> - Cria lista ordenada.</p>
+      <p><strong>&lt;li&gt;</strong> - Define cada item de lista.</p>
+      <p><strong>&lt;dl&gt;</strong> - Lista de definição, usada com &lt;dt&gt; e &lt;dd&gt;.</p>
+      <p><strong>&lt;table&gt;</strong> - Cria tabela.</p>
+      <p><strong>&lt;thead&gt;</strong> - Cabeçalho da tabela.</p>
+      <p><strong>&lt;tbody&gt;</strong> - Corpo da tabela.</p>
+      <p><strong>&lt;tfoot&gt;</strong> - Rodapé da tabela.</p>
+      <p><strong>&lt;tr&gt;</strong> - Linha da tabela.</p>
+      <p><strong>&lt;th&gt;</strong> - Célula de cabeçalho.</p>
+      <p><strong>&lt;td&gt;</strong> - Célula de dados.</p>
+    </div>
+  </div>
+
+</div> 
+</div>
+
+
+<div id="final" class="card">
+  <h2 style="text-align: center;">Conclusão Geral do Projeto</h2>
+  <p>Este projeto demonstra a aplicação prática dos conhecimentos adquiridos ao longo do curso, integrando HTML e CSS para criar um site profissional, moderno e responsivo.</p>
+  <p>A VOO28 representa organização, estratégia e crescimento artístico sustentável.</p>
+</div>
+
+</div>
+
+<footer>
+© 2026 VOO28 – Agenciamento Artístico | Todos os direitos reservados
+</footer>
+
+</body>
+</html>
