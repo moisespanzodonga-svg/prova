@@ -93,68 +93,8 @@
       display: flex;
     }
 
-    section {
-      display: none;
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
-      border-radius: 8px;
-      color: #064e3b;
-    }
-
-    section:target {
-      display: block;
-    }
-
-    #home {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-      padding: 80px 20px;
-    }
-
-    #home .texto-home {
-      flex: 1;
-    }
-
-    #home .texto-home h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-
-    #home .texto-home p {
-      font-size: 18px;
-      line-height: 1.6;
-      margin-bottom: 15px;
-    }
-
-    #home img {
-      flex: 1;
-      max-width: 30%;
-      border-radius: 12px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-      
-    }
-
     h2 {
       color: #047857;
-    }
-
-    .tempos a {
-      display: inline-block;
-      margin: 10px;
-      padding: 15px 20px;
-      background-color: #10b981;
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .tempos a:hover {
-      background-color: #065f46;
     }
 
     .botao-voltar {
@@ -181,19 +121,130 @@
       margin-top: 40px;
     }
 
+    /* ── conteúdo principal ── */
+    .container-principal {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 30px;
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+      flex-wrap: wrap;
+    }
+
+    /* ── formulário ── */
+    .container-formulario {
+      border: 1px solid rgb(224, 223, 223);
+      width: 400px;
+    }
+
+    .formulario {
+      width: 100%;
+      background-color: #047857;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      padding: 30px 0;
+    }
+
+    .container-input {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .container-input label {
+      color: #ffffff;
+      font-size: 14px;
+    }
+
+    .container-input input {
+      height: 32px;
+      width: 100%;
+      padding: 0 8px;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .formulario button {
+      width: 80%;
+      height: 32px;
+      background-color: #10b981;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-top: 4px;
+    }
+
+    .formulario button:hover {
+      background-color: #065f46;
+    }
+
+    /* ── tabela ── */
+    .container-tabela {
+      border: 1px solid rgb(224, 223, 223);
+      flex: 1;
+      min-width: 320px;
+      align-self: flex-start;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    thead tr {
+      background-color: #047857;
+    }
+
+    thead th {
+      padding: 10px 12px;
+      text-align: left;
+      font-weight: 600;
+      color: #ffffff;
+      border-bottom: 2px solid #065f46;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid rgb(224, 223, 223);
+    }
+
+    tbody tr:hover {
+      background-color: #f0fdf4;
+    }
+
+    tbody td {
+      padding: 8px 12px;
+      color: #064e3b;
+    }
+
+    .aprovado {
+      color: #047857;
+      font-weight: bold;
+    }
+
+    .reprovado {
+      color: #dc2626;
+      font-weight: bold;
+    }
+
     @media (max-width: 768px) {
-      #home {
+      .container-principal {
         flex-direction: column;
-        text-align: center;
+        align-items: center;
       }
-      #home img {
-        margin-top: 20px;
-      }
-      #home .texto-home h2 {
-        font-size: 28px;
-      }
-      #home .texto-home p {
-        font-size: 16px;
+      .container-formulario,
+      .container-tabela {
+        width: 100%;
       }
     }
   </style>
@@ -224,9 +275,88 @@
     </div>
   </nav>
 
- 
+  <div class="container-principal">
 
+    <div class="container-formulario">
+      <form class="formulario" onsubmit="salvar(event)">
+        <div class="container-input">
+          <label for="nome_curso">Nome do Curso</label>
+          <input type="text" id="nome_curso" required />
+        </div>
+        <div class="container-input">
+          <label for="nome_aluno">Nome do Aluno</label>
+          <input type="text" id="nome_aluno" required />
+        </div>
+        <div class="container-input">
+          <label for="mac">MAC</label>
+          <input type="number" id="mac" min="0" max="20" required />
+        </div>
+        <div class="container-input">
+          <label for="pp">PP</label>
+          <input type="number" id="pp" min="0" max="20" required />
+        </div>
+        <div class="container-input">
+          <label for="pe">PE</label>
+          <input type="number" id="pe" min="0" max="20" required />
+        </div>
+        <button type="submit">Salvar</button>
+      </form>
+    </div>
 
+    <div class="container-tabela">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>MAC</th>
+            <th>PP</th>
+            <th>PE</th>
+            <th>OBS</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-corpo"></tbody>
+      </table>
+    </div>
 
-  </body>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 VOO28 – Agenciamento Artístico & Produção Musical</p>
+  </footer>
+
+  <script>
+    function salvar(evento) {
+      evento.preventDefault();
+
+      const nome = document.getElementById("nome_aluno").value;
+      const mac = Number(document.getElementById("mac").value);
+      const pp = Number(document.getElementById("pp").value);
+      const pe = Number(document.getElementById("pe").value);
+
+      const media = (mac + pp + pe) / 3;
+
+      let obs;
+      if (media >= 10) {
+        obs = "Aprovado";
+      } else {
+        obs = "Reprovado";
+      }
+
+      const tbody = document.getElementById("tabela-corpo");
+      const tr = document.createElement("tr");
+
+      tr.innerHTML = `
+        <td>${nome}</td>
+        <td>${mac}</td>
+        <td>${pp}</td>
+        <td>${pe}</td>
+        <td class="${media >= 10 ? 'aprovado' : 'reprovado'}">${obs}</td>
+      `;
+
+      tbody.appendChild(tr);
+      evento.target.reset();
+    }
+  </script>
+
+</body>
 </html>
